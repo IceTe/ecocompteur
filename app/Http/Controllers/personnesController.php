@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatepersonnesRequest;
 use App\Repositories\personnesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+
 use Response;
 
 class personnesController extends AppBaseController
@@ -29,6 +30,7 @@ class personnesController extends AppBaseController
      */
     public function index(personnesDataTable $personnesDataTable)
     {
+        
         return $personnesDataTable->render('personnes.index');
     }
 
@@ -38,7 +40,7 @@ class personnesController extends AppBaseController
      * @return Response
      */
     public function create()
-    {
+    {var_dump();exit();
         return view('personnes.create');
     }
 
@@ -90,7 +92,7 @@ class personnesController extends AppBaseController
     public function edit($id)
     {
         $personnes = $this->personnesRepository->findWithoutFail($id);
-
+            
         if (empty($personnes)) {
             Flash::error('Personnes not found');
 

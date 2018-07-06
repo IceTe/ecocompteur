@@ -49,10 +49,10 @@ class personnes extends Model
      * @var array
      */
     public static $rules = [
-        'nom' => 'require',
-        'prenom' => 'require',
-        'age' => 'require',
-        'numero_telephone' => 'require'
+        'nom' => 'required',
+        'prenom' => 'required',
+        'age' => 'required',
+        'numero_telephone' => 'required'
     ];
 
     
